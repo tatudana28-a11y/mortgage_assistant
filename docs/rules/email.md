@@ -1,5 +1,25 @@
 # Email rules
 
+## Forwarded client emails (how clients arrive)
+
+Client emails reach her personal Gmail forwarded from her work address, with a subject
+starting `Fw:`. So the Gmail sender is always her own work address and says nothing about
+the client.
+
+- The client is whoever wrote the **original** message: the `From:` line in the forwarded
+  block in the body (name and email). Match that person to the Client index.
+- Ignore `Fw:` in the subject. The original subject is in the forwarded block.
+- The original text may be empty and only have attachments. Match by the original sender
+  and use the attachment names.
+- A forward is only a client email if it has a forwarded block. Anything else from her
+  work address is "other".
+- Automated lender or insurer emails are not forwards. Match them on the surname or
+  reference in the text.
+- Never reply to her work address as if it were the client. A draft goes to the original
+  sender's address.
+- The `Client/<ID> <name>` label goes on the forwarded thread. The Apps Script works from
+  the label, so attachments are saved from forwards too.
+
 ## Triage ("triage my inbox")
 
 1. Look at unread emails since the last triage (or the last 24 hours).
@@ -9,7 +29,8 @@
    - lender or insurer update
    - meeting request or change
    - other (newsletters, marketing: skip, don't list)
-3. Match it to a client. If the sender matches a client label, apply that label.
+3. Match it to a client by the original sender (see above). If it matches a client, apply
+   that client's label.
    If it's a new person, list it as a possible new client and ask her.
 4. Update the case file (see `../workflow/case-file.md`). Then mark the email as read.
 5. Where a reply is needed, don't draft it yet. List it as a proposal (see below).

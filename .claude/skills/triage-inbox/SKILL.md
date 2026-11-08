@@ -10,7 +10,10 @@ Follow `docs/rules/email.md` (triage steps and drafting rules). For case file up
 
 Steps:
 1. Read `Assistant preferences` in Drive (tone, signature).
-2. List unread emails from the last 24 hours, or since the last triage if she says so.
+2. Client emails arrive forwarded from her work address: the Gmail sender is always her.
+   The client is the original sender, in the `From:` line of the forwarded block (see
+   `docs/rules/email.md`, "Forwarded client emails"). Never match on the Gmail sender.
+   List unread emails from the last 24 hours, or since the last triage if she says so.
 3. Per email: classify, match to a client, apply the `Client/<ID> <name>` label, update the
    case Doc. If a reply is needed, note a one-line proposal. Don't draft yet.
    Label every thread with that client, including threads her own replies started:
