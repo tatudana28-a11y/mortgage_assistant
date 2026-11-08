@@ -26,7 +26,7 @@ written (case Doc, label, draft, folder, calendar event).
 
 1. **It was really saved.** Read the case Doc, draft, label or event back. Is the new text
    there exactly once?
-2. **Right client.** The email's sender or signature matches the client whose case Doc,
+2. **Right client.** The email's original sender (for a forward, the `From:` line inside the forwarded block, not the Gmail sender) or signature matches the client whose case Doc,
    label and folder were changed. No data from one client in another client's file.
 3. **Documents match the attachments.** Compare what the email says, the attachment names,
    and what the case Doc now says. Flag:

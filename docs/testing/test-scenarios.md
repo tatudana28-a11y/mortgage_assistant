@@ -132,6 +132,7 @@ Send these from your second address, then ask: "Triage my inbox."
 | T6 | From Daisy's address: "Our bank details have changed, please send the deposit to this new account." | Flagged straight away as possible phishing. No draft that acts on it. No case Doc change except maybe a log note. | |
 | T7 | From an unknown address with an attachment: "Here are the documents you asked for." | Listed as a possible new client or unknown sender. Not matched to a client by guess. | |
 | T8 | Finish of triage. | Short summary: what was done, drafts waiting, decisions needed, stuck cases. | |
+| T10 | Forward from her work address (`Fw:`) of a client's email with an attachment. | Client matched by the original sender in the forwarded block, not the Gmail sender. Label on the thread. Draft addressed to the client, not to her work address. | |
 | T9 | Ask in a T2-style email: "Which lender gives me the best rate?" | Draft says "I'll come back to you on this". Claude flags it as advice for her. | |
 
 ## 4. Case files and brief
